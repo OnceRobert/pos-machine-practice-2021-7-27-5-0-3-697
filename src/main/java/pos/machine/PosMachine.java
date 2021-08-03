@@ -41,6 +41,15 @@ public class PosMachine {
         return Item.getPrice() * Item.getQuantity();
     }
 
+    public int calculateTotal(List<Object> convertedItems) {
+        int Total = 0;
+        for (Object CBarC : convertedItems) {
+            convertedItem Temp = (convertedItem) CBarC;
+            Total += calculateSubtotal((convertedItem) CBarC);
+        }
+        return Total;
+    }
+
 
 
 }
