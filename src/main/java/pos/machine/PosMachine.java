@@ -37,5 +37,10 @@ public class PosMachine {
         }
     }
 
+    public int calculateSubtotal(convertedItem Item) {
+        return Item.getPrice() * Item.getQuantity();
+    }
+
+
 
 }
