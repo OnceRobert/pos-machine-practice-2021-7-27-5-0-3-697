@@ -50,6 +50,16 @@ public class PosMachine {
         return Total;
     }
 
+    public String generateReceipt(List<Object> convertedItems) {
+        String receipt = "***<store earning no money>Receipt***\n";
+        for (Object CBarC : convertedItems) {
+            convertedItem Temp = (convertedItem) CBarC;
+            receipt += "Name: " + Temp.getName() + ", Quantity: " + Temp.getQuantity() + ", Unit price: " + Temp.getPrice() + " (yuan), Subtotal: " + calculateSubtotal(Temp) + " (yuan)\n";
+        }
+        receipt += "----------------------\n" + "Total: " + calculateTotal(convertedItems) + " (yuan)\n**********************";
+        return receipt;
+    }
+
 
 
 }
