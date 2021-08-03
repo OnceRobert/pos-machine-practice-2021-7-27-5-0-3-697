@@ -9,7 +9,7 @@ public class PosMachine {
     public String printReceipt(List<String> barcodes) {
         List<Object> convertedBC = convertBarcodes(barcodes);
         countItems(barcodes,convertedBC);
-        String receipt = "";
+        String receipt = generateReceipt(convertedBC);
         System.out.print(receipt);
         return receipt;
     }
